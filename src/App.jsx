@@ -1,15 +1,16 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function App() {
   const [lines, setLines] = useState([
     { type: 'ascii', content: `
-███╗   ██╗██╗ ██████╗██╗  ██╗ ██████╗ ██╗      █████╗ ███████╗
-████╗  ██║██║██╔════╝██║  ██║██╔═══██╗██║     ██╔══██╗██╔════╝
-██╔██╗ ██║██║██║     ███████║██║   ██║██║     ███████║███████╗
-██║╚██╗██║██║██║     ██╔══██║██║   ██║██║     ██╔══██║╚════██║
-██║ ╚████║██║╚██████╗██║  ██║╚██████╔╝███████╗██║  ██║███████║
-╚═╝  ╚═══╝╚═╝ ╚═════╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝╚══════╝` },
-    { type: 'welcome', content: 'Welcome to Nicholas Gleason\'s Interactive Resume Terminal' },
+███╗   ██╗██╗ ██████╗██╗  ██╗
+████╗  ██║██║██╔════╝██║ ██╔╝
+██╔██╗ ██║██║██║     █████╔╝ 
+██║╚██╗██║██║██║     ██╔═██╗ 
+██║ ╚████║██║╚██████╗██║  ██╗
+╚═╝  ╚═══╝╚═╝ ╚═════╝╚═╝  ╚═╝` },
+    { type: 'welcome', content: 'Welcome to Nick Gleason\'s Interactive Resume Terminal' },
     { type: 'welcome', content: 'Type "help" to see available commands or try discovering hidden ones...' },
     { type: 'output', content: '' }
   ]);
@@ -22,7 +23,6 @@ export default function App() {
   const [konamiSequence, setKonamiSequence] = useState([]);
   const [typingSpeed, setTypingSpeed] = useState(0);
   const [playSound, setPlaySound] = useState(true);
-  const [showSnake, setShowSnake] = useState(false);
   const inputRef = useRef(null);
   const terminalRef = useRef(null);
   const lastKeyTime = useRef(Date.now());
@@ -68,19 +68,6 @@ export default function App() {
     return false;
   };
 
-  const typeWriter = async (text, lineType = 'output') => {
-    const words = text.split(' ');
-    let currentLine = '';
-    const newLines = [...lines];
-    
-    for (let word of words) {
-      currentLine += (currentLine ? ' ' : '') + word;
-      newLines[newLines.length - 1] = { type: lineType, content: currentLine };
-      setLines([...newLines]);
-      await new Promise(resolve => setTimeout(resolve, 50));
-    }
-  };
-
   function handleCommand() {
     const cmd = input.toLowerCase().trim();
     const now = Date.now();
@@ -120,7 +107,6 @@ export default function App() {
         nextLines.push({ type: 'output', content: '  stats        - View your session stats' });
         nextLines.push({ type: 'output', content: '  achievements - View unlocked achievements' });
         nextLines.push({ type: 'output', content: '  sound        - Toggle sound effects' });
-        nextLines.push({ type: 'output', content: '  snake        - Play snake game' });
         nextLines.push({ type: 'output', content: '  clear        - Clear the terminal' });
         nextLines.push({ type: 'hint', content: '' });
         nextLines.push({ type: 'hint', content: '💡 Hint: Try some classic Unix commands...' });
@@ -173,15 +159,15 @@ export default function App() {
         nextLines.push({ type: 'output', content: '' });
         nextLines.push({ type: 'job-title', content: '🔒 Azure Security Infrastructure' });
         nextLines.push({ type: 'output', content: '  Automated cloud security monitoring and compliance checking' });
-        nextLines.push({ type: 'link', content: '  GitHub: https://github.com/your-username/azure-security' });
+        nextLines.push({ type: 'link', content: '  GitHub: https://github.com/gleanj/azure-security' });
         nextLines.push({ type: 'output', content: '' });
         nextLines.push({ type: 'job-title', content: '🛡️ Incident Response Toolkit' });
         nextLines.push({ type: 'output', content: '  Custom tools for forensic analysis and threat hunting' });
-        nextLines.push({ type: 'link', content: '  GitHub: https://github.com/your-username/ir-toolkit' });
+        nextLines.push({ type: 'link', content: '  GitHub: https://github.com/gleanj/ir-toolkit' });
         nextLines.push({ type: 'output', content: '' });
         nextLines.push({ type: 'job-title', content: '💻 This Resume Terminal!' });
         nextLines.push({ type: 'output', content: '  Interactive terminal-based resume built with React' });
-        nextLines.push({ type: 'link', content: '  GitHub: https://github.com/your-username/resume-terminal' });
+        nextLines.push({ type: 'link', content: '  GitHub: https://github.com/gleanj/resume-terminal' });
         if (unlockAchievement('curious')) {
           nextLines.push({ type: 'achievement', content: '🏆 Achievement Unlocked: Curious - Checked out projects!' });
         }
@@ -192,7 +178,7 @@ export default function App() {
         nextLines.push({ type: 'output', content: '' });
         nextLines.push({ type: 'output', content: '📧 Email:    gleason_secops@outlook.com' });
         nextLines.push({ type: 'link', content: '🔗 LinkedIn: https://www.linkedin.com/in/nicholas-gleason' });
-        nextLines.push({ type: 'link', content: '💻 GitHub:   https://github.com/your-username' });
+        nextLines.push({ type: 'link', content: '💻 GitHub:   https://github.com/gleanj' });
         break;
 
       case 'download':
@@ -217,7 +203,7 @@ export default function App() {
         nextLines.push({ type: 'output', content: '' });
         nextLines.push({ type: 'output', content: `Commands executed: ${commandCount + 1}` });
         nextLines.push({ type: 'output', content: `Average typing speed: ${typingSpeed} WPM` });
-        nextLines.push({ type: 'output', content: `Achievements unlocked: ${achievements.length}/5` });
+        nextLines.push({ type: 'output', content: `Achievements unlocked: ${achievements.length}/4` });
         nextLines.push({ type: 'output', content: `Current theme: ${theme}` });
         break;
 
@@ -228,8 +214,7 @@ export default function App() {
           { id: 'explorer', name: '🏆 Explorer', desc: 'Used 10 commands' },
           { id: 'curious', name: '🏆 Curious', desc: 'Viewed projects' },
           { id: 'interested', name: '🏆 Interested', desc: 'Downloaded resume' },
-          { id: 'hacker', name: '🏆 Hacker', desc: 'Found hidden command' },
-          { id: 'konami', name: '🏆 Konami Master', desc: 'Entered Konami code' }
+          { id: 'hacker', name: '🏆 Hacker', desc: 'Found hidden command' }
         ];
         allAchievements.forEach(ach => {
           const unlocked = achievements.includes(ach.id);
@@ -245,22 +230,16 @@ export default function App() {
         nextLines.push({ type: 'success', content: `✓ Sound effects ${!playSound ? 'enabled' : 'disabled'}` });
         break;
 
-      case 'snake':
-        nextLines.push({ type: 'success', content: '🐍 Starting Snake game...' });
-        nextLines.push({ type: 'hint', content: 'Use arrow keys to move. Press ESC to exit.' });
-        setShowSnake(true);
-        break;
-
       // Easter eggs and hidden commands
       case 'whoami':
-        nextLines.push({ type: 'output', content: 'nicholas-gleason' });
+        nextLines.push({ type: 'output', content: 'nick-gleason' });
         if (unlockAchievement('hacker')) {
           nextLines.push({ type: 'achievement', content: '🏆 Achievement Unlocked: Hacker - Found hidden command!' });
         }
         break;
 
       case 'pwd':
-        nextLines.push({ type: 'output', content: '/home/nicholas-gleason/resume' });
+        nextLines.push({ type: 'output', content: '/home/nick-gleason/resume' });
         break;
 
       case 'ls':
@@ -289,13 +268,13 @@ export default function App() {
       case 'clear':
         setLines([
           { type: 'ascii', content: `
-███╗   ██╗██╗ ██████╗██╗  ██╗ ██████╗ ██╗      █████╗ ███████╗
-████╗  ██║██║██╔════╝██║  ██║██╔═══██╗██║     ██╔══██╗██╔════╝
-██╔██╗ ██║██║██║     ███████║██║   ██║██║     ███████║███████╗
-██║╚██╗██║██║██║     ██╔══██║██║   ██║██║     ██╔══██║╚════██║
-██║ ╚████║██║╚██████╗██║  ██║╚██████╔╝███████╗██║  ██║███████║
-╚═╝  ╚═══╝╚═╝ ╚═════╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝╚══════╝` },
-          { type: 'welcome', content: 'Welcome to Nicholas Gleason\'s Interactive Resume Terminal' },
+███╗   ██╗██╗ ██████╗██╗  ██╗
+████╗  ██║██║██╔════╝██║ ██╔╝
+██╔██╗ ██║██║██║     █████╔╝ 
+██║╚██╗██║██║██║     ██╔═██╗ 
+██║ ╚████║██║╚██████╗██║  ██╗
+╚═╝  ╚═══╝╚═╝ ╚═════╝╚═╝  ╚═╝` },
+          { type: 'welcome', content: 'Welcome to Nick Gleason\'s Interactive Resume Terminal' },
           { type: 'welcome', content: 'Type "help" to see available commands or try discovering hidden ones...' },
           { type: 'output', content: '' }
         ]);
@@ -320,13 +299,10 @@ export default function App() {
     setKonamiSequence(newSequence);
     
     if (JSON.stringify(newSequence) === JSON.stringify(konami)) {
-      if (unlockAchievement('konami')) {
-        const nextLines = [...lines];
-        nextLines.push({ type: 'achievement', content: '🎮 KONAMI CODE ACTIVATED! 🎮' });
-        nextLines.push({ type: 'success', content: '🏆 Achievement Unlocked: Konami Master!' });
-        nextLines.push({ type: 'hint', content: 'You are a true gamer! 🕹️' });
-        setLines(nextLines);
-      }
+      const nextLines = [...lines];
+      nextLines.push({ type: 'achievement', content: '🎮 KONAMI CODE ACTIVATED! 🎮' });
+      nextLines.push({ type: 'success', content: 'You are a true gamer! 🕹️' });
+      setLines(nextLines);
       setKonamiSequence([]);
     }
 
@@ -380,123 +356,11 @@ export default function App() {
     }
   };
 
-  const SnakeGame = () => {
-    const [snake, setSnake] = useState([[5, 5]]);
-    const [food, setFood] = useState([10, 10]);
-    const [direction, setDirection] = useState([0, 1]);
-    const [gameOver, setGameOver] = useState(false);
-    const [score, setScore] = useState(0);
-
-    useEffect(() => {
-      const handleKeyPress = (e) => {
-        if (e.key === 'Escape') {
-          setShowSnake(false);
-        }
-        if (e.key === 'ArrowUp' && direction[0] !== 1) setDirection([-1, 0]);
-        if (e.key === 'ArrowDown' && direction[0] !== -1) setDirection([1, 0]);
-        if (e.key === 'ArrowLeft' && direction[1] !== 1) setDirection([0, -1]);
-        if (e.key === 'ArrowRight' && direction[1] !== -1) setDirection([0, 1]);
-      };
-      window.addEventListener('keydown', handleKeyPress);
-      return () => window.removeEventListener('keydown', handleKeyPress);
-    }, [direction]);
-
-    useEffect(() => {
-      if (gameOver) return;
-      
-      const moveSnake = setInterval(() => {
-        setSnake(prev => {
-          const head = [prev[0][0] + direction[0], prev[0][1] + direction[1]];
-          
-          if (head[0] < 0 || head[0] >= 20 || head[1] < 0 || head[1] >= 20) {
-            setGameOver(true);
-            return prev;
-          }
-          
-          if (prev.some(segment => segment[0] === head[0] && segment[1] === head[1])) {
-            setGameOver(true);
-            return prev;
-          }
-          
-          const newSnake = [head, ...prev];
-          
-          if (head[0] === food[0] && head[1] === food[1]) {
-            setScore(s => s + 1);
-            setFood([Math.floor(Math.random() * 20), Math.floor(Math.random() * 20)]);
-          } else {
-            newSnake.pop();
-          }
-          
-          return newSnake;
-        });
-      }, 150);
-      
-      return () => clearInterval(moveSnake);
-    }, [direction, food, gameOver]);
-
-    return (
-      <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50">
-        <div className="bg-gray-900 p-6 rounded-lg border border-gray-700">
-          <div className="flex justify-between items-center mb-4">
-            <h2 className="text-white text-xl font-bold">Snake Game 🐍</h2>
-            <div className="text-white">Score: {score}</div>
-          </div>
-          <div className="grid grid-cols-20 gap-0 bg-gray-800 p-2">
-            {Array.from({ length: 20 }).map((_, row) =>
-              Array.from({ length: 20 }).map((_, col) => {
-                const isSnake = snake.some(s => s[0] === row && s[1] === col);
-                const isFood = food[0] === row && food[1] === col;
-                const isHead = snake[0][0] === row && snake[0][1] === col;
-                return (
-                  <div
-                    key={`${row}-${col}`}
-                    className={`w-4 h-4 ${
-                      isHead ? 'bg-yellow-400' :
-                      isSnake ? 'bg-green-500' :
-                      isFood ? 'bg-red-500' :
-                      'bg-gray-900'
-                    }`}
-                  />
-                );
-              })
-            )}
-          </div>
-          {gameOver && (
-            <div className="text-center mt-4">
-              <p className="text-red-400 font-bold">Game Over!</p>
-              <p className="text-white">Final Score: {score}</p>
-              <button
-                onClick={() => {
-                  setSnake([[5, 5]]);
-                  setDirection([0, 1]);
-                  setGameOver(false);
-                  setScore(0);
-                }}
-                className="mt-2 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700"
-              >
-                Play Again
-              </button>
-              <button
-                onClick={() => setShowSnake(false)}
-                className="mt-2 ml-2 px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700"
-              >
-                Exit
-              </button>
-            </div>
-          )}
-          <p className="text-gray-400 text-sm mt-4 text-center">Press ESC to exit</p>
-        </div>
-      </div>
-    );
-  };
-
   return (
     <div 
       className="flex justify-center items-center min-h-screen p-3 sm:p-5 relative"
       style={{ backgroundColor: themes[theme].bg }}
     >
-      {showSnake && <SnakeGame />}
-      
       <div 
         className="w-full max-w-5xl h-screen sm:h-[92vh] rounded-none sm:rounded-xl border-0 sm:border flex flex-col overflow-hidden shadow-2xl"
         style={{ 
@@ -515,15 +379,18 @@ export default function App() {
               <div className="w-3 h-3 rounded-full bg-green-500"></div>
             </div>
             <span className="text-gray-300 text-sm sm:text-base font-semibold ml-2">
-              resume@nicholas-gleason ~ {theme} theme
+              resume@nick-gleason ~ {theme} theme
             </span>
           </div>
+          <Link to="/" className="text-gray-400 hover:text-green-400 text-sm font-medium transition-colors">
+            ← Back to Home
+          </Link>
         </div>
 
         <div
           ref={terminalRef}
-          className="flex-1 p-4 sm:p-6 overflow-y-auto font-mono text-sm sm:text-base leading-relaxed"
           onClick={() => inputRef.current?.focus()}
+          className="flex-1 p-4 sm:p-6 overflow-y-auto font-mono text-sm sm:text-base leading-relaxed"
         >
           {lines.map((line, index) => (
             <div
