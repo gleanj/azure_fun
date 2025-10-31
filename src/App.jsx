@@ -1,7 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function App() {
+  const navigate = useNavigate();
   const [lines, setLines] = useState([
     { type: 'ascii', content: `
 ███╗   ██╗██╗ ██████╗██╗  ██╗
@@ -270,7 +271,7 @@ export default function App() {
         nextLines.push({ type: 'hint', content: '    to view the complete formatted resume with download option.' });
         // Navigate to resume page
         setTimeout(() => {
-          window.location.href = '/resume';
+          navigate('/resume');
         }, 1000);
         break;
 
