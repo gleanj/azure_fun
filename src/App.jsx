@@ -258,7 +258,7 @@ export default function App() {
       case 'contact':
         nextLines.push({ type: 'header', content: '=== CONTACT INFORMATION ===' });
         nextLines.push({ type: 'output', content: '' });
-        nextLines.push({ type: 'output', content: '📧 Email:    gleason_secops@outlook.com' });
+        nextLines.push({ type: 'output', content: '📧 Email:    nick@nicksec.com' });
         nextLines.push({ type: 'link', content: '🔗 LinkedIn: https://www.linkedin.com/in/nicholas-gleason' });
         nextLines.push({ type: 'link', content: '💻 GitHub:   https://github.com/gleanj' });
         break;

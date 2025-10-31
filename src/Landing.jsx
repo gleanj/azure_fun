@@ -77,6 +77,7 @@ export default function Landing() {
           <div className="hero-content">
             <h1>Nicholas Gleason</h1>
             <p className="subtitle">Cybersecurity Engineer | Incident Response Specialist</p>
+            <p className="email-highlight">nick@nicksec.com</p>
             <p className="tagline">Protecting enterprise infrastructure with cutting-edge security solutions 🛡️</p>
             <div className="cta-buttons">
               <Link to="/terminal" className="btn btn-primary">🖥️ Try Terminal Resume</Link>
@@ -261,11 +262,11 @@ export default function Landing() {
           <div className="contact-content">
             <h2 className="section-title">Let's Connect</h2>
             <p>I'm always interested in hearing about new opportunities, cybersecurity projects, or collaboration.</p>
-            <a href="mailto:gleason_secops@outlook.com" className="btn btn-primary">📧 Send Me an Email</a>
+            <a href="mailto:nick@nicksec.com" className="btn btn-primary">📧 Send Me an Email</a>
             <div className="social-links">
               <a href="https://www.linkedin.com/in/nicholas-gleason" className="social-link" target="_blank" rel="noopener noreferrer">in</a>
               <a href="https://github.com/gleanj" className="social-link" target="_blank" rel="noopener noreferrer">gh</a>
-              <a href="mailto:gleason_secops@outlook.com" className="social-link">✉</a>
+              <a href="mailto:nick@nicksec.com" className="social-link">✉</a>
             </div>
           </div>
         </div>

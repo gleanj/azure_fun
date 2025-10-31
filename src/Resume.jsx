@@ -27,7 +27,7 @@ export default function Resume() {
           <h1>Nicholas Gleason</h1>
           <p className="resume-title">Cybersecurity Engineer</p>
           <div className="contact-info">
-            <span>📧 gleason_secops@outlook.com</span>
+            <span>📧 nick@nicksec.com</span>
             <span>🔗 linkedin.com/in/nicholas-gleason</span>
             <span>💻 github.com/gleanj</span>
             <span>📍 Fort Wayne, IN</span>

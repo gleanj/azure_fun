@@ -106,8 +106,16 @@
 .landing-page .hero-content .subtitle {
   font-size: 1.5rem;
   color: #a0a0a0;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.landing-page .hero-content .email-highlight {
+  font-size: 1.3rem;
+  color: #22d3ee;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  animation: fadeInUp 1s ease-out 0.3s both;
 }
 
 .landing-page .hero-content .tagline {
