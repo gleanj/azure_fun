@@ -239,13 +239,13 @@ export default function App() {
       case 'projects':
         nextLines.push({ type: 'header', content: '=== PROJECTS ===' });
         nextLines.push({ type: 'output', content: '' });
-        nextLines.push({ type: 'job-title', content: '🔒 Azure Security Infrastructure' });
-        nextLines.push({ type: 'output', content: '  Automated cloud security monitoring and compliance checking' });
-        nextLines.push({ type: 'link', content: '  GitHub: https://github.com/gleanj/azure-security' });
+        nextLines.push({ type: 'job-title', content: '🔍 Threat Intel Dashboard' });
+        nextLines.push({ type: 'output', content: '  Threat intelligence gathering and visualization platform' });
+        nextLines.push({ type: 'link', content: '  GitHub: https://github.com/gleanj/threat-intel-dashboard' });
         nextLines.push({ type: 'output', content: '' });
-        nextLines.push({ type: 'job-title', content: '🛡️ Incident Response Toolkit' });
-        nextLines.push({ type: 'output', content: '  Custom tools for forensic analysis and threat hunting' });
-        nextLines.push({ type: 'link', content: '  GitHub: https://github.com/gleanj/ir-toolkit' });
+        nextLines.push({ type: 'job-title', content: '⚾ DingersBot' });
+        nextLines.push({ type: 'output', content: '  Automated Twitter bot using MLB Stats API for home run notifications' });
+        nextLines.push({ type: 'link', content: '  GitHub: https://github.com/gleanj/dingersbot' });
         nextLines.push({ type: 'output', content: '' });
         nextLines.push({ type: 'job-title', content: '💻 This Resume Terminal!' });
         nextLines.push({ type: 'output', content: '  Interactive terminal-based resume built with React' });

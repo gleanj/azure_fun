@@ -222,24 +222,24 @@ export default function Landing() {
           <h2 className="section-title">Featured Projects</h2>
           <div className="projects-grid">
             <div className="project-card">
-              <h3>🔒 Azure Security Infrastructure</h3>
-              <p>Automated cloud security monitoring and compliance checking system for Azure environments with real-time threat detection.</p>
+              <h3>🔍 Threat Intel Dashboard</h3>
+              <p>Comprehensive threat intelligence gathering and visualization platform that aggregates security feeds and displays actionable insights for proactive defense.</p>
               <div className="project-tags">
-                <span className="tag">Azure</span>
                 <span className="tag">Python</span>
-                <span className="tag">Security</span>
+                <span className="tag">Threat Intelligence</span>
+                <span className="tag">Dashboard</span>
               </div>
-              <a href="https://github.com/gleanj" className="project-link" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+              <a href="https://github.com/gleanj/threat-intel-dashboard" className="project-link" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
             </div>
             <div className="project-card">
-              <h3>🛡️ Incident Response Toolkit</h3>
-              <p>Custom DFIR tools built for forensic analysis and threat hunting in enterprise environments using Velociraptor.</p>
+              <h3>⚾ DingersBot</h3>
+              <p>Automated Twitter bot that monitors MLB games using the MLB Stats API and tweets in real-time whenever a player hits a home run.</p>
               <div className="project-tags">
                 <span className="tag">Python</span>
-                <span className="tag">Forensics</span>
+                <span className="tag">API Integration</span>
                 <span className="tag">Automation</span>
               </div>
-              <a href="https://github.com/gleanj" className="project-link" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+              <a href="https://github.com/gleanj/dingersbot" className="project-link" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
             </div>
             <div className="project-card">
               <h3>💻 Interactive Terminal Resume</h3>
