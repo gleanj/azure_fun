@@ -451,6 +451,10 @@
     width: 100%;
     max-width: 300px;
   }
+
+  .landing-page .scroll-indicator {
+    display: none;
+  }
 }
 
 /* Scroll indicator */
