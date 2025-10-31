@@ -230,11 +230,6 @@ export default function App() {
         nextLines.push({ type: 'output', content: '' });
         nextLines.push({ type: 'success', content: '  ⏳ GIAC Certified Forensic Analyst (GCFA)' });
         nextLines.push({ type: 'date', content: '    SANS Institute | In Progress' });
-        nextLines.push({ type: 'output', content: '' });
-        nextLines.push({ type: 'header', content: '=== MILITARY SERVICE ===' });
-        nextLines.push({ type: 'output', content: '' });
-        nextLines.push({ type: 'job-title', content: 'U.S. Army National Guard' });
-        nextLines.push({ type: 'date', content: '2014 - 2024' });
         break;
 
       case 'projects':

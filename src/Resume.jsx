@@ -222,18 +222,6 @@ export default function Resume() {
         </section>
 
         <section className="resume-section">
-          <h2>Military Service</h2>
-          <div className="job-entry" style={{ borderBottom: 'none', paddingBottom: '0', marginBottom: '0' }}>
-            <div className="job-header">
-              <div>
-                <h3>U.S. Army National Guard</h3>
-              </div>
-              <p className="job-dates">2014 - 2024</p>
-            </div>
-          </div>
-        </section>
-
-        <section className="resume-section">
           <h2>Technical Skills</h2>
 
           <div className="skills-section">
