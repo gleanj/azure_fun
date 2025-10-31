@@ -98,10 +98,12 @@ export default function App() {
         nextLines.push({ type: 'output', content: '  help         - Show this help message' });
         nextLines.push({ type: 'output', content: '  about        - Learn about me' });
         nextLines.push({ type: 'output', content: '  skills       - View my technical skills' });
+        nextLines.push({ type: 'output', content: '  tools        - Security tools I work with daily' });
         nextLines.push({ type: 'output', content: '  experience   - See my work experience' });
         nextLines.push({ type: 'output', content: '  education    - View education & certifications' });
         nextLines.push({ type: 'output', content: '  projects     - Check out my projects' });
         nextLines.push({ type: 'output', content: '  contact      - Get my contact information' });
+        nextLines.push({ type: 'output', content: '  resume       - View full formatted resume' });
         nextLines.push({ type: 'output', content: '  download     - Download my resume PDF' });
         nextLines.push({ type: 'output', content: '  theme        - Change terminal theme' });
         nextLines.push({ type: 'output', content: '  stats        - View your session stats' });
@@ -114,44 +116,124 @@ export default function App() {
 
       case 'about':
         nextLines.push({ type: 'header', content: '=== ABOUT ME ===' });
-        nextLines.push({ type: 'output', content: "Hello! I'm a security engineer and consultant for a large MSP." });
-        nextLines.push({ type: 'output', content: "I specialize in cloud security, incident response, and infrastructure protection." });
+        nextLines.push({ type: 'output', content: "Hello! I'm Nick Gleason, a Cybersecurity Engineer at Resultant." });
+        nextLines.push({ type: 'output', content: "I have 3+ years of progressive experience in security operations," });
+        nextLines.push({ type: 'output', content: "incident response, and security infrastructure architecture." });
+        nextLines.push({ type: 'output', content: "" });
+        nextLines.push({ type: 'output', content: "I architect enterprise security solutions and lead end-to-end" });
+        nextLines.push({ type: 'output', content: "EDR/SIEM deployments for multiple clients with expertise in threat" });
+        nextLines.push({ type: 'output', content: "detection, vulnerability management, and workflow automation." });
+        nextLines.push({ type: 'output', content: "" });
+        nextLines.push({ type: 'output', content: "Background includes network engineering roles with U.S. Cyber Command" });
+        nextLines.push({ type: 'output', content: "and the Department of Defense, bringing classified network security" });
+        nextLines.push({ type: 'output', content: "experience to commercial cybersecurity challenges." });
         break;
 
       case 'skills':
         nextLines.push({ type: 'header', content: '=== TECHNICAL SKILLS ===' });
-        nextLines.push({ type: 'output', content: 'Security:' });
-        nextLines.push({ type: 'output', content: '  • Incident Response & Forensic Analysis' });
-        nextLines.push({ type: 'output', content: '  • Network Engineering & Intrusion Detection' });
-        nextLines.push({ type: 'output', content: '  • Email Security & Security Awareness Training' });
-        nextLines.push({ type: 'output', content: '  • EDR Deployment & Management' });
+        nextLines.push({ type: 'output', content: '' });
+        nextLines.push({ type: 'output', content: 'Security Operations:' });
+        nextLines.push({ type: 'output', content: '  • Incident Response & DFIR' });
+        nextLines.push({ type: 'output', content: '  • Threat Hunting & Detection' });
+        nextLines.push({ type: 'output', content: '  • Security Awareness Training' });
+        nextLines.push({ type: 'output', content: '  • Vulnerability Management' });
+        nextLines.push({ type: 'output', content: '' });
+        nextLines.push({ type: 'output', content: 'Infrastructure:' });
+        nextLines.push({ type: 'output', content: '  • EDR/XDR Deployment & Management' });
+        nextLines.push({ type: 'output', content: '  • SIEM Administration' });
+        nextLines.push({ type: 'output', content: '  • Network Security Compliance' });
+        nextLines.push({ type: 'output', content: '  • Email Security Solutions' });
+        nextLines.push({ type: 'output', content: '' });
+        nextLines.push({ type: 'output', content: 'Automation & Engineering:' });
+        nextLines.push({ type: 'output', content: '  • Security Automation & Orchestration' });
+        nextLines.push({ type: 'output', content: '  • Network Engineering & Architecture' });
+        nextLines.push({ type: 'output', content: '  • Client-Facing Consulting' });
+        nextLines.push({ type: 'hint', content: '' });
+        nextLines.push({ type: 'hint', content: '💡 Try "tools" to see the security platforms I use!' });
+        break;
+
+      case 'tools':
+        nextLines.push({ type: 'header', content: '=== SECURITY TOOLS & PLATFORMS ===' });
+        nextLines.push({ type: 'output', content: '' });
+        nextLines.push({ type: 'output', content: 'Endpoint Detection & Response (EDR/XDR):' });
+        nextLines.push({ type: 'output', content: '  • SentinelOne        • CrowdStrike Falcon' });
+        nextLines.push({ type: 'output', content: '  • Trend Micro        • Microsoft Defender for Endpoint' });
+        nextLines.push({ type: 'output', content: '' });
+        nextLines.push({ type: 'output', content: 'SIEM & Threat Detection:' });
+        nextLines.push({ type: 'output', content: '  • Rapid7 InsightIDR  • ConnectWise SIEM' });
+        nextLines.push({ type: 'output', content: '  • Splunk             • Varonis' });
+        nextLines.push({ type: 'output', content: '' });
+        nextLines.push({ type: 'output', content: 'Email & Endpoint Security:' });
+        nextLines.push({ type: 'output', content: '  • Proofpoint         • Barracuda Email Gateway' });
+        nextLines.push({ type: 'output', content: '  • Microsoft Defender for Email' });
+        nextLines.push({ type: 'output', content: '' });
+        nextLines.push({ type: 'output', content: 'Vulnerability Management:' });
+        nextLines.push({ type: 'output', content: '  • Rapid7 InsightVM   • ConnectSecure' });
+        nextLines.push({ type: 'output', content: '  • Nessus             • Nexpose' });
+        nextLines.push({ type: 'output', content: '' });
+        nextLines.push({ type: 'output', content: 'Network Security:' });
+        nextLines.push({ type: 'output', content: '  • Palo Alto Firewalls • Checkpoint' });
+        nextLines.push({ type: 'output', content: '  • Cisco ASA/Meraki    • pfSense' });
+        nextLines.push({ type: 'output', content: '' });
+        nextLines.push({ type: 'output', content: 'Cloud Security:' });
+        nextLines.push({ type: 'output', content: '  • Microsoft Azure Security' });
+        nextLines.push({ type: 'output', content: '  • Amazon Web Services (AWS) Security' });
+        nextLines.push({ type: 'output', content: '' });
+        nextLines.push({ type: 'output', content: 'Automation & Scripting:' });
+        nextLines.push({ type: 'output', content: '  • Rewst              • Python' });
+        nextLines.push({ type: 'output', content: '  • PowerShell         • Bash' });
+        if (unlockAchievement('toolmaster')) {
+          nextLines.push({ type: 'achievement', content: '🏆 Achievement Unlocked: Tool Master - Explored the security toolkit!' });
+        }
         break;
 
       case 'experience':
         nextLines.push({ type: 'header', content: '=== WORK EXPERIENCE ===' });
         nextLines.push({ type: 'output', content: '' });
-        nextLines.push({ type: 'job-title', content: 'Security Engineer — Resultant' });
-        nextLines.push({ type: 'date', content: 'May 2023 - Present' });
-        nextLines.push({ type: 'output', content: '  • Built secure cloud infrastructure on Azure for customers' });
-        nextLines.push({ type: 'output', content: '  • Led incident response and threat mitigation efforts' });
-        nextLines.push({ type: 'output', content: '  • Automated vulnerability scanning and remediation with CI pipelines' });
+        nextLines.push({ type: 'job-title', content: 'Cyber Security Engineer — Resultant' });
+        nextLines.push({ type: 'date', content: 'June 2023 - Present' });
+        nextLines.push({ type: 'output', content: '  • Architect end-to-end security stack onboarding for enterprise clients' });
+        nextLines.push({ type: 'output', content: '  • Lead incident response for ransomware, account takeovers, firewall breaches' });
+        nextLines.push({ type: 'output', content: '  • Engineer automated threat detection in Rapid7 and ConnectWise SIEM' });
+        nextLines.push({ type: 'output', content: '  • Manage security awareness programs using KnowBe4' });
+        nextLines.push({ type: 'output', content: '  • Consult on vulnerability management with Rapid7 and ConnectSecure' });
         nextLines.push({ type: 'output', content: '' });
         nextLines.push({ type: 'job-title', content: 'Network Engineer — Resultant' });
-        nextLines.push({ type: 'date', content: 'Dec 2022 - May 2023' });
-        nextLines.push({ type: 'output', content: '  • Helped transition and upgrade the City of Fort Wayne to Meraki' });
-        nextLines.push({ type: 'output', content: '  • Managed network infrastructure and security implementations' });
+        nextLines.push({ type: 'date', content: 'December 2022 - June 2023' });
+        nextLines.push({ type: 'output', content: '  • Engineered large-scale network modernization to Meraki stack' });
+        nextLines.push({ type: 'output', content: '  • Configured Checkpoint firewall infrastructure across multi-site environments' });
+        nextLines.push({ type: 'output', content: '  • Tier 3 escalation for complex Layer 2/Layer 3 network issues' });
+        nextLines.push({ type: 'output', content: '' });
+        nextLines.push({ type: 'job-title', content: 'Network Engineer — U.S. Cyber Command (Active Duty)' });
+        nextLines.push({ type: 'date', content: 'September 2021 - December 2022' });
+        nextLines.push({ type: 'output', content: '  • Architected next-gen firewalls protecting classified networks' });
+        nextLines.push({ type: 'output', content: '  • Maintained defense-in-depth architecture for classified data' });
+        nextLines.push({ type: 'output', content: '  • Optimized SOC threat monitoring and reduced false positives' });
+        nextLines.push({ type: 'output', content: '  • Developed SOPs for Network Operations Center' });
+        nextLines.push({ type: 'output', content: '  • Trained and mentored Tier 1/2 personnel' });
+        nextLines.push({ type: 'output', content: '' });
+        nextLines.push({ type: 'job-title', content: 'Network Engineer — Department of Defense' });
+        nextLines.push({ type: 'date', content: 'July 2019 - September 2021' });
+        nextLines.push({ type: 'output', content: '  • Led network preparation for CISA security audits' });
+        nextLines.push({ type: 'output', content: '  • Managed enterprise IAVM compliance program' });
+        nextLines.push({ type: 'output', content: '  • Deployed Cisco DNA-C with ISE for zero-trust access control' });
+        nextLines.push({ type: 'output', content: '  • Implemented 802.1x network access control' });
+        nextLines.push({ type: 'output', content: '  • Directed hardware lifecycle modernization project' });
         break;
 
       case 'education':
-        nextLines.push({ type: 'header', content: '=== EDUCATION & CERTIFICATIONS ===' });
+        nextLines.push({ type: 'header', content: '=== CERTIFICATIONS ===' });
         nextLines.push({ type: 'output', content: '' });
-        nextLines.push({ type: 'job-title', content: 'SANS GCFA (In Progress)' });
-        nextLines.push({ type: 'date', content: 'JAN 2025 - Present' });
+        nextLines.push({ type: 'success', content: '  ✓ GIAC Certified Penetration Tester (GPEN)' });
+        nextLines.push({ type: 'date', content: '    SANS Institute | Expires August 2028' });
         nextLines.push({ type: 'output', content: '' });
-        nextLines.push({ type: 'output', content: 'Active Certifications:' });
-        nextLines.push({ type: 'output', content: '  • SANS GPEN - GIAC Penetration Tester' });
-        nextLines.push({ type: 'output', content: '  • CASP+ - CompTIA Advanced Security Practitioner' });
-        nextLines.push({ type: 'output', content: '  • CCNA - Cisco Certified Network Associate' });
+        nextLines.push({ type: 'success', content: '  ⏳ GIAC Certified Forensic Analyst (GCFA)' });
+        nextLines.push({ type: 'date', content: '    SANS Institute | In Progress' });
+        nextLines.push({ type: 'output', content: '' });
+        nextLines.push({ type: 'header', content: '=== MILITARY SERVICE ===' });
+        nextLines.push({ type: 'output', content: '' });
+        nextLines.push({ type: 'job-title', content: 'U.S. Army National Guard' });
+        nextLines.push({ type: 'date', content: '2014 - 2024' });
         break;
 
       case 'projects':
@@ -181,6 +263,17 @@ export default function App() {
         nextLines.push({ type: 'link', content: '💻 GitHub:   https://github.com/gleanj' });
         break;
 
+      case 'resume':
+        nextLines.push({ type: 'output', content: '📄 Opening full formatted resume...' });
+        nextLines.push({ type: 'hint', content: '' });
+        nextLines.push({ type: 'hint', content: '💡 Tip: Click "📄 Full Resume" in the top-right corner or visit /resume' });
+        nextLines.push({ type: 'hint', content: '    to view the complete formatted resume with download option.' });
+        // Navigate to resume page
+        setTimeout(() => {
+          window.location.href = '/resume';
+        }, 1000);
+        break;
+
       case 'download':
         nextLines.push({ type: 'output', content: '📄 Generating PDF resume...' });
         nextLines.push({ type: 'success', content: '✓ Resume download started!' });
@@ -203,7 +296,7 @@ export default function App() {
         nextLines.push({ type: 'output', content: '' });
         nextLines.push({ type: 'output', content: `Commands executed: ${commandCount + 1}` });
         nextLines.push({ type: 'output', content: `Average typing speed: ${typingSpeed} WPM` });
-        nextLines.push({ type: 'output', content: `Achievements unlocked: ${achievements.length}/4` });
+        nextLines.push({ type: 'output', content: `Achievements unlocked: ${achievements.length}/5` });
         nextLines.push({ type: 'output', content: `Current theme: ${theme}` });
         break;
 
@@ -213,6 +306,7 @@ export default function App() {
         const allAchievements = [
           { id: 'explorer', name: '🏆 Explorer', desc: 'Used 10 commands' },
           { id: 'curious', name: '🏆 Curious', desc: 'Viewed projects' },
+          { id: 'toolmaster', name: '🏆 Tool Master', desc: 'Explored security tools' },
           { id: 'interested', name: '🏆 Interested', desc: 'Downloaded resume' },
           { id: 'hacker', name: '🏆 Hacker', desc: 'Found hidden command' }
         ];
@@ -243,7 +337,7 @@ export default function App() {
         break;
 
       case 'ls':
-        nextLines.push({ type: 'output', content: 'about.txt  skills.txt  experience.txt  education.txt  contact.txt' });
+        nextLines.push({ type: 'output', content: 'about.txt  skills.txt  tools.txt  experience.txt  education.txt  contact.txt' });
         break;
 
       case 'sudo':
@@ -330,7 +424,7 @@ export default function App() {
       }
     } else if (e.key === 'Tab') {
       e.preventDefault();
-      const commands = ['help', 'about', 'skills', 'experience', 'education', 'projects', 'contact', 'download', 'theme', 'stats', 'achievements', 'clear'];
+      const commands = ['help', 'about', 'skills', 'tools', 'experience', 'education', 'projects', 'contact', 'download', 'theme', 'stats', 'achievements', 'clear'];
       const matches = commands.filter(cmd => cmd.startsWith(input.toLowerCase()));
       if (matches.length === 1) {
         setInput(matches[0]);
@@ -382,9 +476,14 @@ export default function App() {
               resume@nick-gleason ~ {theme} theme
             </span>
           </div>
-          <Link to="/" className="text-gray-400 hover:text-green-400 text-sm font-medium transition-colors">
-            ← Back to Home
-          </Link>
+          <div className="flex gap-4">
+            <Link to="/" className="text-gray-400 hover:text-green-400 text-sm font-medium transition-colors">
+              ← Back to Home
+            </Link>
+            <Link to="/resume" className="text-gray-400 hover:text-blue-400 text-sm font-medium transition-colors">
+              📄 Full Resume
+            </Link>
+          </div>
         </div>
 
         <div

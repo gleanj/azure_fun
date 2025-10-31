@@ -1,0 +1,387 @@
+.resume-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
+
+.resume-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+  padding: 1rem 0;
+}
+
+.nav-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-link {
+  color: #60a5fa;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #93c5fd;
+}
+
+.download-btn {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(59, 130, 246, 0.3);
+}
+
+.download-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(59, 130, 246, 0.4);
+}
+
+.resume-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  background: white;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+}
+
+.resume-header {
+  text-align: center;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #3b82f6;
+  margin-bottom: 2rem;
+}
+
+.resume-header h1 {
+  font-size: 2.5rem;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.resume-title {
+  font-size: 1.25rem;
+  color: #3b82f6;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.contact-info span {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.resume-section {
+  margin-bottom: 2rem;
+}
+
+.resume-section h2 {
+  font-size: 1.5rem;
+  color: #1e293b;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.resume-section p {
+  color: #475569;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.competencies-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.competency-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.competency-column li {
+  color: #475569;
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.5;
+}
+
+.competency-column li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: #3b82f6;
+  font-weight: bold;
+}
+
+.job-entry {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.job-entry:last-child {
+  border-bottom: none;
+}
+
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.job-header h3 {
+  font-size: 1.2rem;
+  color: #1e293b;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.company {
+  color: #3b82f6;
+  font-weight: 500;
+  margin: 0;
+}
+
+.job-dates {
+  color: #64748b;
+  font-style: italic;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.job-responsibilities {
+  list-style: none;
+  padding: 0;
+}
+
+.job-responsibilities li {
+  color: #475569;
+  padding: 0.4rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.job-responsibilities li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #3b82f6;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.certifications {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.cert-item {
+  background: #f8fafc;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border-left: 3px solid #3b82f6;
+}
+
+.cert-item h4 {
+  color: #1e293b;
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.cert-item p {
+  color: #64748b;
+  margin: 0;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.skills-section {
+  display: grid;
+  gap: 1rem;
+}
+
+.skill-category {
+  background: #f8fafc;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.skill-category h4 {
+  color: #1e293b;
+  margin: 0 0 0.5rem 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.skill-category p {
+  color: #475569;
+  margin: 0;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.training-list,
+.achievements-list {
+  list-style: none;
+  padding: 0;
+}
+
+.training-list li,
+.achievements-list li {
+  color: #475569;
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.6;
+}
+
+.training-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #3b82f6;
+  font-weight: bold;
+}
+
+.achievements-list li::before {
+  content: "★";
+  position: absolute;
+  left: 0;
+  color: #3b82f6;
+  font-weight: bold;
+}
+
+.achievements-list strong {
+  color: #1e293b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .resume-content {
+    padding: 2rem 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0;
+  }
+
+  .resume-header h1 {
+    font-size: 2rem;
+  }
+
+  .contact-info {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .competencies-grid,
+  .certifications {
+    grid-template-columns: 1fr;
+  }
+
+  .job-header {
+    flex-direction: column;
+  }
+
+  .job-dates {
+    margin-top: 0.5rem;
+  }
+
+  .nav-content {
+    padding: 0 1rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  .resume-container {
+    background: white;
+  }
+
+  .resume-content {
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .resume-header {
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .resume-section {
+    page-break-inside: avoid;
+    margin-bottom: 1.5rem;
+  }
+
+  .job-entry {
+    page-break-inside: avoid;
+  }
+
+  .resume-header h1 {
+    font-size: 2rem;
+  }
+
+  .contact-info {
+    font-size: 0.8rem;
+    gap: 1rem;
+  }
+
+  .resume-section h2 {
+    font-size: 1.2rem;
+  }
+
+  body {
+    font-size: 11pt;
+  }
+
+  .certifications,
+  .competencies-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@page {
+  margin: 0.5in;
+}

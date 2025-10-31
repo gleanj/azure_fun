@@ -65,6 +65,7 @@ export default function Landing() {
             <li><a href="#skills" onClick={(e) => scrollToSection(e, 'skills')}>Skills</a></li>
             <li><a href="#experience" onClick={(e) => scrollToSection(e, 'experience')}>Experience</a></li>
             <li><a href="#projects" onClick={(e) => scrollToSection(e, 'projects')}>Projects</a></li>
+            <li><Link to="/resume">Resume</Link></li>
             <li><a href="#contact" onClick={(e) => scrollToSection(e, 'contact')}>Contact</a></li>
           </ul>
         </div>
@@ -75,10 +76,11 @@ export default function Landing() {
         <div className="container">
           <div className="hero-content">
             <h1>Nicholas Gleason</h1>
-            <p className="subtitle">Security Engineer & Cloud Security Specialist</p>
-            <p className="tagline">Protecting infrastructure, one system at a time 🛡️</p>
+            <p className="subtitle">Cybersecurity Engineer | Incident Response Specialist</p>
+            <p className="tagline">Protecting enterprise infrastructure with cutting-edge security solutions 🛡️</p>
             <div className="cta-buttons">
               <Link to="/terminal" className="btn btn-primary">🖥️ Try Terminal Resume</Link>
+              <Link to="/resume" className="btn btn-secondary">📄 View Full Resume</Link>
               <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')} className="btn btn-secondary">📧 Get In Touch</a>
             </div>
           </div>
@@ -95,33 +97,61 @@ export default function Landing() {
           <div className="skills-grid">
             <div className="skill-card">
               <div className="skill-icon">🔒</div>
-              <h3>Incident Response</h3>
-              <p>Expert in threat detection, forensic analysis, and rapid incident mitigation across enterprise environments.</p>
-            </div>
-            <div className="skill-card">
-              <div className="skill-icon">☁️</div>
-              <h3>Cloud Security</h3>
-              <p>Building secure Azure infrastructure with automated compliance checking and vulnerability management.</p>
-            </div>
-            <div className="skill-card">
-              <div className="skill-icon">🌐</div>
-              <h3>Network Engineering</h3>
-              <p>Designing and implementing secure network architectures with intrusion detection systems.</p>
-            </div>
-            <div className="skill-card">
-              <div className="skill-icon">📧</div>
-              <h3>Email Security</h3>
-              <p>Implementing advanced email protection and conducting security awareness training programs.</p>
+              <h3>Incident Response & DFIR</h3>
+              <p>Expert in threat detection, forensic analysis with Velociraptor, and rapid incident mitigation across enterprise environments.</p>
             </div>
             <div className="skill-card">
               <div className="skill-icon">🛡️</div>
-              <h3>EDR Deployment</h3>
-              <p>Deploying and managing endpoint detection and response solutions across diverse environments.</p>
+              <h3>EDR/XDR Management</h3>
+              <p>Deploying and optimizing SentinelOne, CrowdStrike, Trend Micro, and Microsoft Defender for comprehensive endpoint protection.</p>
+            </div>
+            <div className="skill-card">
+              <div className="skill-icon">🔍</div>
+              <h3>Threat Hunting</h3>
+              <p>Proactive threat detection and security monitoring using ConnectWise SIEM and advanced analytics platforms.</p>
+            </div>
+            <div className="skill-card">
+              <div className="skill-icon">🎯</div>
+              <h3>Vulnerability Management</h3>
+              <p>Comprehensive scanning and remediation strategies using ConnectSecure and Rapid7 platforms.</p>
+            </div>
+            <div className="skill-card">
+              <div className="skill-icon">📧</div>
+              <h3>Email & Data Security</h3>
+              <p>Implementing Barracuda email security and Varonis for data protection and insider threat detection.</p>
             </div>
             <div className="skill-card">
               <div className="skill-icon">⚙️</div>
-              <h3>Automation</h3>
-              <p>Creating CI/CD pipelines for automated vulnerability scanning and security remediation.</p>
+              <h3>Security Automation</h3>
+              <p>Leveraging Rewst for security orchestration and ConnectWise RMM for automated incident response workflows.</p>
+            </div>
+          </div>
+
+          {/* Security Tools Showcase */}
+          <div style={{ marginTop: '4rem' }}>
+            <h3 className="section-title" style={{ fontSize: '1.5rem', marginBottom: '2rem' }}>Security Arsenal</h3>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center' }}>
+              {[
+                'SentinelOne', 'CrowdStrike Falcon', 'Trend Micro', 'Microsoft Defender',
+                'Rapid7 InsightIDR', 'ConnectWise SIEM', 'Splunk', 'Varonis',
+                'Proofpoint', 'Barracuda', 'KnowBe4', 'Rapid7 InsightVM',
+                'ConnectSecure', 'Palo Alto', 'Checkpoint', 'Rewst',
+                'Python', 'PowerShell', 'Cisco DNA-C', 'Meraki'
+              ].map((tool, index) => (
+                <span
+                  key={index}
+                  style={{
+                    padding: '0.5rem 1rem',
+                    background: 'rgba(59, 130, 246, 0.1)',
+                    border: '1px solid rgba(59, 130, 246, 0.3)',
+                    borderRadius: '2rem',
+                    fontSize: '0.9rem',
+                    color: '#60a5fa'
+                  }}
+                >
+                  {tool}
+                </span>
+              ))}
             </div>
           </div>
         </div>
@@ -134,24 +164,51 @@ export default function Landing() {
           <div className="timeline">
             <div className="timeline-item">
               <div className="timeline-content">
-                <h3>Security Engineer</h3>
-                <div className="date">Resultant | May 2023 - Present</div>
+                <h3>Cyber Security Engineer</h3>
+                <div className="date">Resultant | June 2023 - Present</div>
                 <ul>
-                  <li>Built secure cloud infrastructure on Azure for enterprise customers</li>
-                  <li>Led incident response and threat mitigation efforts</li>
-                  <li>Automated vulnerability scanning with CI/CD pipelines</li>
-                  <li>Conducted security assessments and penetration testing</li>
+                  <li>Architected and deployed end-to-end security stack onboarding solutions for enterprise clients, including EDR (SentinelOne, CrowdStrike), email security (Proofpoint, Barracuda), and SIEM platforms</li>
+                  <li>Led incident response operations for high-impact security events including ransomware attacks, account takeovers, and firewall breaches, developing standardized response playbooks</li>
+                  <li>Engineered automated threat detection workflows in Rapid7 and ConnectWise SIEM, analyzing daily security alerts and optimizing correlation rules to reduce false positives</li>
+                  <li>Managed enterprise security awareness programs using KnowBe4, deploying phishing simulations and training campaigns</li>
+                  <li>Consulted with clients on vulnerability management programs, analyzing Rapid7 and ConnectSecure scan results to prioritize remediation</li>
                 </ul>
               </div>
             </div>
             <div className="timeline-item">
               <div className="timeline-content">
                 <h3>Network Engineer</h3>
-                <div className="date">Resultant | Dec 2022 - May 2023</div>
+                <div className="date">Resultant | December 2022 - June 2023</div>
                 <ul>
-                  <li>Led City of Fort Wayne's transition to Meraki infrastructure</li>
-                  <li>Managed network security implementations</li>
-                  <li>Optimized network performance and reliability</li>
+                  <li>Engineered and executed large-scale network infrastructure modernization project, migrating enterprise clients from legacy Cisco hardware to full Meraki stack</li>
+                  <li>Configured and maintained Checkpoint firewall infrastructure across multi-site environments</li>
+                  <li>Served as Tier 3 escalation point for help desk, resolving complex Layer 2/Layer 3 network connectivity issues</li>
+                </ul>
+              </div>
+            </div>
+            <div className="timeline-item">
+              <div className="timeline-content">
+                <h3>Network Engineer</h3>
+                <div className="date">U.S. Cyber Command (Active Duty) | September 2021 - December 2022</div>
+                <ul>
+                  <li>Architected, configured, and deployed next-generation firewall infrastructure protecting classified networks, maintaining security compliance during DISA STIG audits</li>
+                  <li>Hardened and maintained defense-in-depth network architecture for classified data environments</li>
+                  <li>Collaborated with Security Operations Center to optimize threat monitoring coverage, reducing false positive alerts</li>
+                  <li>Developed and implemented SOPs for Network Operations Center, improving incident response processes</li>
+                  <li>Trained and mentored Tier 1 and Tier 2 personnel on network architecture and security configurations</li>
+                </ul>
+              </div>
+            </div>
+            <div className="timeline-item">
+              <div className="timeline-content">
+                <h3>Network Engineer</h3>
+                <div className="date">Department of Defense | July 2019 - September 2021</div>
+                <ul>
+                  <li>Led network infrastructure preparation and remediation for CISA security audits, working directly with auditors to achieve compliance</li>
+                  <li>Managed enterprise-wide IAVM compliance program, patching and updating network devices to maintain security standards</li>
+                  <li>Architected and deployed Cisco DNA-C software-defined networking solution, integrating with Cisco ISE and Wireless Controllers</li>
+                  <li>Spearheaded implementation of 802.1x network access control across enterprise environment</li>
+                  <li>Directed hardware lifecycle modernization project, deploying Cisco Catalyst 9200/9300 series switches</li>
                 </ul>
               </div>
             </div>
@@ -166,7 +223,7 @@ export default function Landing() {
           <div className="projects-grid">
             <div className="project-card">
               <h3>🔒 Azure Security Infrastructure</h3>
-              <p>Automated cloud security monitoring and compliance checking system for Azure environments.</p>
+              <p>Automated cloud security monitoring and compliance checking system for Azure environments with real-time threat detection.</p>
               <div className="project-tags">
                 <span className="tag">Azure</span>
                 <span className="tag">Python</span>
@@ -176,7 +233,7 @@ export default function Landing() {
             </div>
             <div className="project-card">
               <h3>🛡️ Incident Response Toolkit</h3>
-              <p>Custom tools for forensic analysis and threat hunting in enterprise environments.</p>
+              <p>Custom DFIR tools built for forensic analysis and threat hunting in enterprise environments using Velociraptor.</p>
               <div className="project-tags">
                 <span className="tag">Python</span>
                 <span className="tag">Forensics</span>
@@ -186,7 +243,7 @@ export default function Landing() {
             </div>
             <div className="project-card">
               <h3>💻 Interactive Terminal Resume</h3>
-              <p>A fully functional terminal-based resume built with React, featuring games and achievements.</p>
+              <p>A fully functional terminal-based resume built with React, featuring hidden commands, themes, and achievement system.</p>
               <div className="project-tags">
                 <span className="tag">React</span>
                 <span className="tag">JavaScript</span>
@@ -203,7 +260,7 @@ export default function Landing() {
         <div className="container">
           <div className="contact-content">
             <h2 className="section-title">Let's Connect</h2>
-            <p>I'm always interested in hearing about new opportunities, projects, or just chatting about cybersecurity.</p>
+            <p>I'm always interested in hearing about new opportunities, cybersecurity projects, or collaboration.</p>
             <a href="mailto:gleason_secops@outlook.com" className="btn btn-primary">📧 Send Me an Email</a>
             <div className="social-links">
               <a href="https://www.linkedin.com/in/nicholas-gleason" className="social-link" target="_blank" rel="noopener noreferrer">in</a>
@@ -217,7 +274,7 @@ export default function Landing() {
       {/* Footer */}
       <footer className="landing-footer">
         <div className="container">
-          <p>&copy; 2025 Nicholas Gleason. Built with passion for security.</p>
+          <p>&copy; 2024 Nicholas Gleason. Built with passion for cybersecurity.</p>
         </div>
       </footer>
     </div>
