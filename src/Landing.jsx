@@ -130,8 +130,8 @@ export default function Landing() {
 
           {/* Security Tools Showcase */}
           <div style={{ marginTop: '4rem' }}>
-            <h3 className="section-title" style={{ fontSize: '1.5rem', marginBottom: '2rem' }}>Security Arsenal</h3>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center' }}>
+            <h3 className="section-title" style={{ fontSize: '2rem', marginBottom: '3rem' }}>Security Arsenal</h3>
+            <div className="security-arsenal">
               {[
                 'SentinelOne', 'CrowdStrike Falcon', 'Trend Micro', 'Microsoft Defender',
                 'Rapid7 InsightIDR', 'ConnectWise SIEM', 'Splunk', 'Varonis',
@@ -141,14 +141,7 @@ export default function Landing() {
               ].map((tool, index) => (
                 <span
                   key={index}
-                  style={{
-                    padding: '0.5rem 1rem',
-                    background: 'rgba(59, 130, 246, 0.1)',
-                    border: '1px solid rgba(59, 130, 246, 0.3)',
-                    borderRadius: '2rem',
-                    fontSize: '0.9rem',
-                    color: '#60a5fa'
-                  }}
+                  className="tool-badge"
                 >
                   {tool}
                 </span>

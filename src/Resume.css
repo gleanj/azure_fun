@@ -1,16 +1,39 @@
 .resume-container {
   min-height: 100vh;
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  background: #000000;
+  position: relative;
+}
+
+.resume-container::before {
+  content: '';
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 20% 50%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+  animation: gradientShift 20s ease infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes gradientShift {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(5%, 5%) rotate(180deg); }
 }
 
 .resume-nav {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(15, 23, 42, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   padding: 1rem 0;
+  transition: all 0.3s ease;
 }
 
 .nav-content {
@@ -23,31 +46,68 @@
 }
 
 .nav-link {
-  color: #60a5fa;
+  background: linear-gradient(135deg, #10b981, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
-.nav-link:hover {
-  color: #93c5fd;
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #10b981, #3b82f6);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
 }
 
 .download-btn {
-  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
   color: white;
   border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
+  padding: 0.85rem 1.75rem;
+  border-radius: 12px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(59, 130, 246, 0.3);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+  letter-spacing: 0.02em;
+  position: relative;
+  overflow: hidden;
+}
+
+.download-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.download-btn:hover::before {
+  width: 300px;
+  height: 300px;
 }
 
 .download-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(59, 130, 246, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 20px 50px rgba(16, 185, 129, 0.5);
 }
 
 .resume-content {
@@ -55,31 +115,39 @@
   margin: 0 auto;
   padding: 3rem 2rem;
   background: white;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
   margin-top: 2rem;
   margin-bottom: 2rem;
-  border-radius: 0.5rem;
+  border-radius: 16px;
+  position: relative;
+  z-index: 1;
 }
 
 .resume-header {
   text-align: center;
   padding-bottom: 2rem;
-  border-bottom: 2px solid #3b82f6;
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(90deg, #10b981, #3b82f6);
+  border-image-slice: 1;
   margin-bottom: 2rem;
 }
 
 .resume-header h1 {
-  font-size: 2.5rem;
-  color: #1e293b;
-  margin-bottom: 0.5rem;
-  font-weight: 700;
+  font-size: 2.75rem;
+  color: #0a0a0a;
+  margin-bottom: 0.75rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
 .resume-title {
-  font-size: 1.25rem;
-  color: #3b82f6;
+  font-size: 1.35rem;
+  background: linear-gradient(135deg, #10b981, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: 1rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .contact-info {
@@ -102,12 +170,15 @@
 }
 
 .resume-section h2 {
-  font-size: 1.5rem;
-  color: #1e293b;
-  border-bottom: 2px solid #e2e8f0;
-  padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
-  font-weight: 700;
+  font-size: 1.65rem;
+  color: #0a0a0a;
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(90deg, #10b981, #3b82f6);
+  border-image-slice: 1;
+  padding-bottom: 0.65rem;
+  margin-bottom: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
 }
 
 .resume-section p {
@@ -139,7 +210,10 @@
   content: "▸";
   position: absolute;
   left: 0;
-  color: #3b82f6;
+  background: linear-gradient(135deg, #10b981, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   font-weight: bold;
 }
 
@@ -168,8 +242,11 @@
 }
 
 .company {
-  color: #3b82f6;
-  font-weight: 500;
+  background: linear-gradient(135deg, #10b981, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
   margin: 0;
 }
 
@@ -198,7 +275,10 @@
   content: "•";
   position: absolute;
   left: 0;
-  color: #3b82f6;
+  background: linear-gradient(135deg, #10b981, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   font-weight: bold;
   font-size: 1.2rem;
 }
@@ -210,10 +290,33 @@
 }
 
 .cert-item {
-  background: #f8fafc;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  border-left: 3px solid #3b82f6;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.05), rgba(59, 130, 246, 0.05));
+  padding: 1.25rem;
+  border-radius: 12px;
+  border-left: 4px solid #10b981;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cert-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.cert-item:hover::before {
+  left: 100%;
+}
+
+.cert-item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 10px 30px rgba(16, 185, 129, 0.2);
 }
 
 .cert-item h4 {
@@ -236,9 +339,17 @@
 }
 
 .skill-category {
-  background: #f8fafc;
-  padding: 1rem;
-  border-radius: 0.5rem;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.03), rgba(59, 130, 246, 0.03));
+  padding: 1.25rem;
+  border-radius: 12px;
+  border: 1px solid rgba(16, 185, 129, 0.1);
+  transition: all 0.3s ease;
+}
+
+.skill-category:hover {
+  border-color: rgba(16, 185, 129, 0.3);
+  box-shadow: 0 5px 20px rgba(16, 185, 129, 0.1);
+  transform: translateY(-2px);
 }
 
 .skill-category h4 {
