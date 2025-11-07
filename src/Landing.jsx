@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import ContactForm from './ContactForm.jsx';
+import Newsletter from './Newsletter.jsx';
 
 export default function Landing() {
   useEffect(() => {
@@ -82,6 +84,7 @@ export default function Landing() {
             <div className="cta-buttons">
               <Link to="/terminal" className="btn btn-primary">🖥️ Try Terminal Resume</Link>
               <Link to="/resume" className="btn btn-secondary">📄 View Full Resume</Link>
+              <a href="/Nicholas_Gleason_Resume.pdf" download className="btn btn-secondary">⬇️ Download PDF</a>
               <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')} className="btn btn-secondary">📧 Get In Touch</a>
             </div>
           </div>
@@ -254,13 +257,22 @@ export default function Landing() {
         <div className="container">
           <div className="contact-content">
             <h2 className="section-title">Let's Connect</h2>
-            <p>I'm always interested in hearing about new opportunities, cybersecurity projects, or collaboration.</p>
-            <a href="mailto:nick@nicksec.com" className="btn btn-primary">📧 Send Me an Email</a>
+            <p style={{ textAlign: 'center', marginBottom: '2rem', fontSize: '1.1rem' }}>I'm always interested in hearing about new opportunities, cybersecurity projects, or collaboration.</p>
+
+            <ContactForm />
+
+            <div style={{ textAlign: 'center', margin: '2rem 0' }}>
+              <p style={{ color: '#94a3b8', marginBottom: '1rem' }}>Or reach out directly:</p>
+              <a href="mailto:nick@nicksec.com" className="btn btn-primary" style={{ display: 'inline-block' }}>📧 Send Me an Email</a>
+            </div>
+
             <div className="social-links">
               <a href="https://www.linkedin.com/in/nicholas-gleason" className="social-link" target="_blank" rel="noopener noreferrer">in</a>
               <a href="https://github.com/gleanj" className="social-link" target="_blank" rel="noopener noreferrer">gh</a>
               <a href="mailto:nick@nicksec.com" className="social-link">✉</a>
             </div>
+
+            <Newsletter />
           </div>
         </div>
       </section>
