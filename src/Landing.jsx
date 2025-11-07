@@ -84,7 +84,6 @@ export default function Landing() {
             <div className="cta-buttons">
               <Link to="/terminal" className="btn btn-primary">🖥️ Try Terminal Resume</Link>
               <Link to="/resume" className="btn btn-secondary">📄 View Full Resume</Link>
-              <a href="/Nicholas_Gleason_Resume.pdf" download className="btn btn-secondary">⬇️ Download PDF</a>
               <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')} className="btn btn-secondary">📧 Get In Touch</a>
             </div>
           </div>
