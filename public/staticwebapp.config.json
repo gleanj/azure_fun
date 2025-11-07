@@ -1,50 +1,15 @@
 {
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": ["/assets/*", "*.{png,jpg,gif,svg,ico,css,js,json}"]
+  },
+  "mimeTypes": {
+    ".json": "application/json",
+    ".js": "text/javascript"
+  },
   "globalHeaders": {
     "X-Content-Type-Options": "nosniff",
     "X-Frame-Options": "DENY",
-    "X-XSS-Protection": "1; mode=block",
-    "Referrer-Policy": "strict-origin-when-cross-origin",
-    "Permissions-Policy": "geolocation=(), microphone=(), camera=()"
-  },
-  "routes": [
-    {
-      "route": "/assets/*.js",
-      "headers": {
-        "Content-Type": "application/javascript; charset=utf-8"
-      }
-    },
-    {
-      "route": "/assets/*.css",
-      "headers": {
-        "Content-Type": "text/css; charset=utf-8"
-      }
-    },
-    {
-      "route": "/*.svg",
-      "headers": {
-        "Content-Type": "image/svg+xml"
-      }
-    },
-    {
-      "route": "/sitemap.xml",
-      "headers": {
-        "Content-Type": "application/xml"
-      }
-    },
-    {
-      "route": "/robots.txt",
-      "headers": {
-        "Content-Type": "text/plain"
-      }
-    }
-  ],
-  "navigationFallback": {
-    "rewrite": "/index.html",
-    "exclude": ["/assets/*", "/*.svg", "/sitemap.xml", "/robots.txt"]
-  },
-  "mimeTypes": {
-    ".js": "application/javascript",
-    ".json": "application/json",
-    ".svg": "image/svg+xml"
+    "Referrer-Policy": "strict-origin-when-cross-origin"
   }
 }
