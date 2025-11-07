@@ -4,13 +4,22 @@ const ThemeContext = createContext();
 
 export function ThemeProvider({ children }) {
   const [theme, setTheme] = useState(() => {
-    const saved = localStorage.getItem('theme');
-    return saved || 'dark';
+    // Check localStorage first, default to dark
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('theme');
+      const initialTheme = saved || 'dark';
+      // Set immediately to avoid flash
+      document.documentElement.setAttribute('data-theme', initialTheme);
+      return initialTheme;
+    }
+    return 'dark';
   });
 
   useEffect(() => {
-    localStorage.setItem('theme', theme);
-    document.documentElement.setAttribute('data-theme', theme);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('theme', theme);
+      document.documentElement.setAttribute('data-theme', theme);
+    }
   }, [theme]);
 
   const toggleTheme = () => {
